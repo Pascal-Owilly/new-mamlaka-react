@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--black-gradient: linear-gradient(144.39deg,
+			#ffffff -278.56%,
+			#e1700d -78.47%,
+			#f58606 91.61%);
+	--card-shadow: 0px 20px 100px -10px rgba(249, 121, 10, 0.1);
+
+	--primary-hue: 294;
+	--primary-sat: 57%;
+	--primary: var(--primary-hue) var(--primary-sat) 36%;
+	--primary-dark: var(--primary-hue) var(--primary-sat) 20%;
+
+	--secondary: 342 63% 60%;
+}
+
+
+* {
+	scroll-behavior: smooth;
+}
+
+@layer base {
+	body {
+		transition: background-color 0.5s ease, color 0.5s ease !important;
+		@apply font-poppins text-[hsl(221_39%_11%)];
+	}
+}
+
+@layer utilities {
+	.container {
+		@apply px-app !max-w-7xl mx-auto;
+	}
+
+	.grid-centered {
+		@apply grid place-items-center;
+	}
+
+	.bg-dark {
+		--color: var(--primary-hue) var(--primary-sat);
+		@apply text-white bg-gradient-to-br from-[hsl(var(--color)_15%)] to-[hsl(var(--color)_10%)];
+	}
+}
+
+
+
+.privacyPage {
+	font-family: 'Roboto', sans-serif;
+	color: #333;
+	line-height: 1.6;
+	background-color: #f9f9f9;
+	padding: 0;
+	margin: 0;
+}
+
+.heroSection {
+	background: linear-gradient(45deg, #773697, #af7ac5);
+	color: #fff;
+	text-align: center;
+	padding: 50px 20px;
+}
+
+.heroTitle {
+	font-size: 2.5em;
+	margin: 0;
+	font-weight: bold;
+}
+
+.heroSubtitle {
+	font-size: 1.2em;
+	margin-top: 10px;
+}
+
+.contentSection {
+	padding: 40px 20px;
+}
+
+.sectionTitle {
+	font-size: 1.8em;
+	border-bottom: 2px solid #773697;
+	padding-bottom: 5px;
+	margin-top: 30px;
+	color: #773697;
+}
+
+.text {
+	margin: 20px 0;
+}
+
+.subTitle {
+	font-size: 1.5em;
+	color: #af7ac5;
+}
+
+.contentList {
+	list-style-type: none;
+	padding: 0;
+	margin: 20px 0;
+}
+
+.listItem {
+	background: #f1f1f1;
+	padding: 10px 20px;
+	margin: 10px 0;
+	border-left: 5px solid #773697;
+	font-weight: 500;
+}
+
+.policySection {
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	margin: 20px 0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Optionally, you can add a class for other elements as needed */
+.transition {
+	transition: all 0.5s ease;
+	/* Applies to all properties */
+}
+
+.small-image {
+	width: 100px;
+	/* Adjust as necessary */
+	height: 50px;
+	/* Maintain aspect ratio */
+	border-radius: 10px;
+}
+
+.section-content {
+	margin: 30px auto;
+	max-width: 800px;
+	padding: 20px;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sub-title {
+	font-size: 1.2em;
+	color: #ccc;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	border-left: 4px solid #773697;
+	padding-left: 10px;
+}
+
+.text {
+	font-size: 1.1em;
+	color: #555;
+	line-height: 1.8;
+	margin-bottom: 15px;
+}
+
+ul.text {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul.text li {
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+
+ul.text img {
+	height: 40px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.rounded-circle {
+	width: 40px;
+	/* Adjust size as needed */
+	height: 40px;
+	/* Adjust size as needed */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	color: #773697;
+	/* Example color for number */
+	background-color: rgba(119, 54, 151, 0.2);
+	/* Light background color */
+}
+
+
+.text-gradient {
+	background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
+			#ed9005 0.89%,
+			#da6506 17.23%,
+			#ea8a03 42.04%,
+			#f8a305 55.12%,
+			#c8b36e 71.54%,
+			#d76508 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+}
+
+.text-gradient-2 {
+	background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
+			#222b5b 0.89%,
+			#6a2b89 17.23%,
+			#852890 42.04%,
+			#402a6f 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+}
+
+.bg-blue-gradient {
+	background: linear-gradient(157.81deg,
+			#ff7403 -43.27%,
+			#e56904 -21.24%,
+			#f59904 12.19%,
+			#eb9b05 29.82%,
+			#ff9809 51.94%,
+			#ee8207 90.29%);
+}
+
+.bg-black-gradient {
+	background: linear-gradient(144.39deg,
+			#ffffff -278.56%,
+			#f55e01 -78.47%,
+			#f77903 91.61%);
+}
+
+.bg-black-gradient-2 {
+	background: linear-gradient(-168.39deg,
+			#ffffff -278.56%,
+			#d7830c -78.47%,
+			#f3aa00 91.61%);
+}
+
+.bg-gray-gradient {
+	background: linear-gradient(153.47deg,
+			rgba(254, 140, 2, 0) -341.94%,
+			#d6860e 95.11%);
+}
+
+.bg-discount-gradient {
+	background: linear-gradient(125.17deg, #de680d 0%, #eb8f06 100%);
+}
+
+.box-shadow {
+	box-shadow: 0px 20px 100px -10px rgba(255, 179, 3, 0.1);
+}
+
+.sidebar {
+	-webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-top {
+	0% {
+		-webkit-transform: translateY(100px);
+		transform: translateY(100px);
+	}
+
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@keyframes slide-top {
+	0% {
+		-webkit-transform: translateY(100px);
+		transform: translateY(100px);
+	}
+
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+/* .feature-card:hover {
+  background: #852890;
+  color: white;
+  box-shadow: var(--card-shadow);
+} */
+
+.feedback-container .feedback-card:last-child {
+	margin-right: 0px;
+}
+
+.feedback-card {
+	background: transparent;
+}
+
+.feedback-card:hover {
+	background: var(--black-gradient);
+}
+
+.blue__gradient {
+	background: linear-gradient(180deg, rgba(244, 145, 7, 0) 0%, #ed9303 100%);
+	filter: blur(123px);
+}
+
+.pink__gradient {
+	background: linear-gradient(90deg, #f48b0a 0%, #ef7d03 100%);
+	filter: blur(900px);
+}
+
+.white__gradient {
+	background: rgba(219, 112, 5, 0.6);
+	filter: blur(750px);
+}
+
+
+.graph__img {
+	@apply absolute bg-slate-100 border-2 rounded-full w-24 h-24 border-primary;
+}
+
+/* Get started arrow */
+
+.arrow {
+	display: inline-block;
+	position: relative;
+	font-weight: bold;
+	/* Make the arrow bold */
+	font-size: 24px;
+	/* Increase the size */
+	animation: slideArrow 2s ease-in-out infinite;
+}
+
+@keyframes slideArrow {
+	0% {
+		left: 0;
+	}
+
+	50% {
+		left: 15px;
+		/* Increase distance for longer movement */
+	}
+
+	100% {
+		left: 0;
+	}
+}

@@ -1,0 +1,6 @@
+export { default as BadgeIcon } from './badge.jsx'
+export { default as CloseIcon } from './close.jsx'
+export { default as MenuIcon } from './menu.jsx'
+export { default as ShieldIcon } from './shield.jsx'
+export { default as TargetIcon } from './target.jsx'
+export { default as UsersIcon } from './users.jsx'

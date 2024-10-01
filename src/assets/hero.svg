@@ -1,0 +1,26 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0">
+  <!-- Define the linear gradient -->
+  <defs>
+    <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Atom core -->
+  <circle cx="100" cy="100" r="10" fill="url(#text-gradient)" />
+
+  <!-- Orbit paths -->
+  <ellipse cx="100" cy="100" rx="60" ry="20" fill="none" stroke="url(#text-gradient)" stroke-width="2">
+    <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="6s" repeatCount="indefinite" />
+  </ellipse>
+  
+  <ellipse cx="100" cy="100" rx="40" ry="60" fill="none" stroke="url(#text-gradient)" stroke-width="2">
+    <animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="6s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- Electron (small circle orbiting) -->
+  <circle cx="160" cy="100" r="5" fill="url(#text-gradient)">
+    <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="6s" repeatCount="indefinite" />
+  </circle>
+</svg>
