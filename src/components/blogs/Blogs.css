@@ -1,0 +1,121 @@
+/* Blog Page Styling */
+
+.blog-container{
+    min-height: 100vh
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 20px; 
+    padding: 20px;
+    border-radius: 10px;
+    
+  }
+  
+  .grid-item {
+    display: flex;
+    justify-content: center; 
+  }
+  
+  /* Blog Card */
+  .blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+  }
+  
+  /* Blog Image */
+  .blog-image {
+    object-fit: cover;
+    height: 200px; /* Fixed height for images */
+    margin-bottom: 10px;
+  }
+  
+  /* Title Styles */
+  .card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333; /* Darker text for better readability */
+    padding: 5px;
+
+  }
+  
+  /* Text Styles */
+  .card-text {
+    font-size: 1rem;
+    color: #555; /* Medium gray for body text */
+    line-height: 1.5; /* Increased line height for readability */
+    padding: 5px;
+  }
+  
+  /* Button Styles */
+  .btn-primary {
+    background-color: #f9f9f9; /* Bootstrap Primary Color */
+    border-radius: 10px;
+    padding: 7px;
+    /* border: 1px solid #ccc; */
+    font-size: 12px;
+    right: 0 !important;
+    color: #333;
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 2px 2px #333
+  }
+  
+  /* Load More Button */
+  .btn-secondary {
+    background-color: #6c757d; /* Bootstrap Secondary Color */
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr); /* Three columns */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* One column */
+    }
+  }
+  
+  /* Multi-line text truncation */
+.text-truncate-multi {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 7.5em; 
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+}
+
+.text-muted {
+    font-size: 12px;
+    opacity: 0.5;
+    font-weight: 500;
+    margin-left: -20px;
+}

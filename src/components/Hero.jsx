@@ -134,19 +134,18 @@ const Hero = () => {
 					services for growth.
 				</p>
 
-				<a id="heroCta" href="/solutions" className="opacity-0 inline-block mt-5">
+				<a id="heroCta" href="/contact-us" className="opacity-0 inline-block mt-5">
 					<button
 						className={[
 							"bg-primary font-semibold tracking-wide px-4 py-4",
 							"text-sm text-white rounded-md flex items-center justify-center",
 						].join(' ')}
 					>
-						Discover our capabilities
-						{ /* <span className="ml-3 arrow">→</span> {/* Forward arrow */}
+						Get in touch
+						<span className="ml-3 arrow">→</span> 
 					</button>
 				</a>
 			</div>
-
 
 			{/* Particle Effect */}
 			<div className={`relative ${styles.flexCenter}`}>

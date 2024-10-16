@@ -9,8 +9,8 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0', // Allow external access
-    port: 3000,      // Change this to your preferred port
-    https: true,    // Set to true if you want HTTPS in development
+    port: 5173,      
+    https: true,    
   },
   build: {
     outDir: 'dist', // Specify the output directory
@@ -21,11 +21,11 @@ export default defineConfig({
         manualChunks(id) {
           // This can help with code-splitting
           if (id.includes('node_modules')) {
-            return id.split('node_modules/')[1].split('/')[0].toString(); // Separate vendor chunks
+            return id.split('node_modules/')[1].split('/')[0].toString(); 
           }
         },
       },
     },
   },
-  base: '/', // Set the base path if your app is served from a subdirectory
+  base: '/', 
 });

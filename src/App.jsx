@@ -9,7 +9,7 @@ import {
 	Footer,
 	Navbar,
 	Stats,
-	Testimonials,
+	// Testimonials,
 	Hero,
 	PrivacyP,
 	TermsOfService,
@@ -26,6 +26,10 @@ import {
 	Products,
 } from "./components";
 import Mission from "./components/Mission";
+import Blogs from "./components/blogs/Blogs";
+import BlogDetail from "./components/blogs/BlogDetail";
+import PartnersPage from './components/partners/PartnersPage';
+import Testimonials from './components/testimonials/Testimonials';
 
 const App = () => (
 
@@ -63,6 +67,11 @@ const App = () => (
 					<Route path="/solutions" element={<Solutions />} />
 					<Route path="/about-us" element={<AboutUs />} />
 					<Route path="/contact-us" element={<ContactUs />} />
+					<Route path="/blogs" element={<Blogs />} />
+					<Route path="/blog/:id" element={<BlogDetail />} />
+					<Route path="/partners" element={<PartnersPage />} />
+					<Route path="/testimonials" element={<Testimonials />} />
+
 				</Routes>
 			</div>
 		</div>

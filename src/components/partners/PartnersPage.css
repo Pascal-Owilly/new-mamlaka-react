@@ -1,0 +1,46 @@
+/* PartnersPage.css */
+
+.partners-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .partners-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .partner-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .partner-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .partner-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #773697; /* Use your desired color */
+  }
+  
+  .partner-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  

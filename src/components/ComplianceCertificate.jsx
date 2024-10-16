@@ -48,14 +48,14 @@ const ComplianceCertifications = () => (
       </div>
 
       {/* Image Section */}
-      <div className={`w-full lg:w-1/2 ${layout.sectionImg} relative`}>
+      {/* <div className={`w-full lg:w-1/2 ${layout.sectionImg} relative`}>
         <img
           src="https://imgs.search.brave.com/_9ogFmsFd_p4eqLK42BljJ3Y__ifgVt6kZ7pb04XHn8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/d2FsbHBhcGVya2lk/cy5jb20vcHVibGlj/L21lZGlhL2ltYWdl/cy9pc28yNzAxLmpw/Zw"
           alt="Industry Certifications"
           className="w-full h-auto rounded-lg shadow-2xl"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-20 rounded-lg" />
-      </div>
+      </div> */}
     </div>
   </section>
 );

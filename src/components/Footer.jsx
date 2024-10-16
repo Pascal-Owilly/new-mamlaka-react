@@ -2,6 +2,7 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 import { logo } from "../assets";
 import { footerLinks, socialMedia } from "../constants";
+import SubscriptionForm from '../components/subscription/Subscrption';
 
 const Footer = () => {
 	return (
@@ -39,9 +40,8 @@ const Footer = () => {
 					</a>
 
 					<div>
-						<p className="text-xl font-semibold">Get Started Today</p>
 						<p className="opacity-80">
-							Join now and experience seamless, secure, and fast trade financing.
+							<SubscriptionForm />
 						</p>
 					</div>
 				</div>

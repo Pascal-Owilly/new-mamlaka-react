@@ -14,7 +14,7 @@ const SolutionsPage = () => {
 
       {/* Solutions Content */}
       <div className="p-8 bg-gray-100">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {/* Payment Processing Card */}
           <div className="solution-card bg-white p-6 rounded shadow-lg">
             <FaMoneyBillWave className="text-4xl text-purple-600 mb-4" />

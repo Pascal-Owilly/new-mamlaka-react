@@ -12,23 +12,38 @@ import { BadgeIcon, ShieldIcon, UsersIcon } from '../components/icons'
 
 export const navLinks = [
 	{
-		title: "Solutions",
-		url: "/solutions", // Link to the products page
+		title: "Home",
+		url: "/",
+	  },
+	{
+	  title: "Solutions",
+	  url: "/solutions",
 	},
 	{
-		title: "About Us",
-		url: "/about-us", // Link to the company page
+	  title: "Company",
+	  dropdown: [
+		{ title: "About Us", url: "/about-us" },
+	  ],
 	},
 	{
-		title: "FAQs",
-		url: "/faqs", // Link to the FAQs page
+	  title: "Resources",
+	  dropdown: [
+		{ title: "Blog & Events", url: "/blogs" },
+		{ title: "Testimonials", url: "/testimonials" },
+		{ title: "Partners", url: "/partners" },
+	  ],
 	},
 	{
-		title: "Connect with us",
-		url: "/contact-us", // Link to the contact page
+	  title: "FAQs",
+	  url: "/faqs",
 	},
-];
-
+	{
+	  title: "Connect with us",
+	  url: "/contact-us",
+	  isButton: true,
+	},
+  ];
+  
 
 export const features = [
 	// {
@@ -125,10 +140,7 @@ export const footerLinks = [
 				name: "Return Policy",
 				link: "/return-policy", // Internal link for Return Policy
 			},
-			{
-				name: "Compliance Certificate",
-				link: "/compliance-certificate", // Internal link for Compliance Certificate
-			},
+
 		],
 	},
 
@@ -150,16 +162,23 @@ export const footerLinks = [
 	{
 		title: "Partner",
 		links: [
-			// {
-			//   name: "Our Partner",
-			//   link: "",
-			// },
+			{
+			  name: "Our Partners",
+			  link: "",
+			},
+		
+			{
+				name: "Compliance Certificate",
+				link: "/compliance-certificate", // Internal link for Compliance Certificate
+			},
 			{
 				name: "FAQs",
 				link: "/faqs",
-			},
+			}
 		],
 	},
+	
+	
 ];
 
 export const socialMedia = [
@@ -215,3 +234,6 @@ export const clients = [
 	},
 
 ];
+
+export { default as CaretIcon } from '../components/icons/CaretIcon';
+
