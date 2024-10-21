@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { BASE_URL } from '../config/Config';
 import './Testimonials.css';
+import { BASE_URL } from '../config/Config';
 
-const TestimonialsPage = () => {
+const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const testimonialsPerPage = 4;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const testimonialsPerPage = 3; // Updated to show 3 testimonials per page
 
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch(`${BASE_URL}/blog/testimonials/`);
+        const response = await fetch(`${BASE_URL}blog/testimonials`);
         const data = await response.json();
-        setTestimonials(data);
+        setTestimonials(data); // Assuming data is an array of testimonials
       } catch (error) {
         console.error('Error fetching testimonials:', error);
       }
@@ -21,45 +21,68 @@ const TestimonialsPage = () => {
     fetchTestimonials();
   }, []);
 
-  const indexOfLastTestimonial = currentPage * testimonialsPerPage;
-  const indexOfFirstTestimonial = indexOfLastTestimonial - testimonialsPerPage;
-  const currentTestimonials = testimonials.slice(indexOfFirstTestimonial, indexOfLastTestimonial);
+  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const nextTestimonials = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalPages);
+  };
+
+  const prevTestimonials = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalPages) % totalPages);
+  };
+
+  const currentTestimonials = testimonials.slice(
+    currentIndex * testimonialsPerPage,
+    (currentIndex + 1) * testimonialsPerPage
+  );
 
   return (
-    <div className="testimonials-container">
-      <h1 className="testimonials-title">What Our Clients Say</h1>
-      <div className="testimonials-grid">
-        {currentTestimonials.map((testimonial) => (
-          <div key={testimonial.id} className="testimonial-card">
-            {testimonial.profile_image && (
-              <img
-                src={testimonial.profile_image}
-                alt={testimonial.client_name}
-                className="testimonial-image"
-              />
-            )}
-            <div className="testimonial-content">
-              <h2 className="client-name">{testimonial.client_name}</h2>
-              <p className="client-text">{testimonial.client_text}</p>
+    <section
+      className="testimonials"
+      style={{
+        backgroundImage: "url('')",
+      }}
+    >
+      <div className="container">
+        <div className="title">
+          <h5>Testimonials</h5>
+          <h2>What our clients say</h2>
+        </div>
+        <div className="testimonials-container">
+          {currentTestimonials.map((testimonial) => (
+            <div className="testimonial-card" key={testimonial.created_at}>
+              <div className="profile">
+                <img
+                  src={testimonial.profile_image || 'https://via.placeholder.com/50'}
+                  alt={testimonial.client_name}
+                />
+                <div className="information">
+                  <div className="stars">
+                    {[...Array(5)].map((_, starIndex) => (
+                      <i className="fa fa-star" key={starIndex}></i>
+                    ))}
+                  </div>
+                  <p>{testimonial.client_name}</p>
+                </div>
+              </div>
+              <p>{testimonial.client_text}</p> {/* Changed from client_text to client_context */}
+              <div className="icon">
+                <i className="fa fa-quote-right" aria-hidden="true"></i>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="pagination">
-        {Array.from({ length: Math.ceil(testimonials.length / testimonialsPerPage) }, (_, index) => (
-          <button
-            key={index + 1}
-            onClick={() => paginate(index + 1)}
-            className={`pagination-button ${currentPage === index + 1 ? 'active' : ''}`}
-          >
-            {index + 1}
+          ))}
+        </div>
+        <div className="navigation">
+          <button onClick={prevTestimonials} className="prev" disabled={currentIndex === 0}>
+            ❮
           </button>
-        ))}
+          <button onClick={nextTestimonials} className="next" disabled={currentIndex === totalPages - 1}>
+            ❯
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default TestimonialsPage;
+export default Testimonials;

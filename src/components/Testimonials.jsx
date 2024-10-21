@@ -1,41 +1,42 @@
 import { feedback } from "../constants";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 import styles from "../style";
-import FeedbackCard from "./FeedbackCard";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-import { Pagination, Navigation } from 'swiper/modules';
 
 const Testimonials = () => (
-  <section id="clients" className="w-full h-screen flex justify-center items-center relative">
-    {/* Background gradients */}
-    <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient bottom-40" />
-
-    {/* Carousel */}
+  <section className="container mx-auto py-10">
     <Swiper
-      pagination={{ clickable: true }}
       navigation={true}
-      modules={[Pagination, Navigation]}
-      loop={true}
-      className="w-full h-full"
+      modules={[Navigation]}
+      spaceBetween={20}
+      slidesPerView={1}
+      breakpoints={{
+        600: { slidesPerView: 2 },
+        1000: { slidesPerView: 3 },
+      }}
     >
       {feedback.map((card) => (
-  <SwiperSlide key={card.id} className="flex justify-center items-center">
-  <div className="w-full md:w-[80%] lg:w-[60%] p-10 flex flex-col items-center">
-    <h2 className={`${styles.heading2} text-center mb-6`}>
-      What People are <br className="sm:block hidden" /> saying about us
-    </h2>
-    <p className={`${styles.paragraph} text-center mb-6`}>
-      {card.content}
-    </p>
-    {/* <FeedbackCard {...card} /> */}  
-  </div>
-</SwiperSlide>
+        <SwiperSlide key={card.id}>
+          <div className="allitem">
+            <div className="blog-allof">
+              <div className="img-date">
+                <img
+                  src={card.img} // Assuming feedback API provides an image URL
+                  // alt={card.title}
+                  className="testimonial-image"
+                />
+              </div>
+              <div className="discretion-blog">
+                <h3>{card.title}</h3>
+                <p>{card.content}</p>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
       ))}
     </Swiper>
-
   </section>
 );
 

@@ -1,121 +1,111 @@
-/* Blog Page Styling */
 
-.blog-container{
-    min-height: 100vh
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px; /* Adjust spacing between grid items */
+  margin-bottom: 24px; /* Space between blog posts */
+  padding: 16px; /* Padding around each blog post */
+  background-color: white; /* Background color for blog post */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 90%;
+  margin: auto;
 }
 
-/* Grid Container */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four columns */
-    gap: 20px; 
-    padding: 20px;
-    border-radius: 10px;
-    
-  }
-  
-  .grid-item {
-    display: flex;
-    justify-content: center; 
-  }
-  
-  /* Blog Card */
-  .blog-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-  }
-  
-  .blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
-  }
-  
-  /* Blog Image */
-  .blog-image {
-    object-fit: cover;
-    height: 200px; /* Fixed height for images */
-    margin-bottom: 10px;
-  }
-  
-  /* Title Styles */
-  .card-title {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333; /* Darker text for better readability */
-    padding: 5px;
-
-  }
-  
-  /* Text Styles */
-  .card-text {
-    font-size: 1rem;
-    color: #555; /* Medium gray for body text */
-    line-height: 1.5; /* Increased line height for readability */
-    padding: 5px;
-  }
-  
-  /* Button Styles */
-  .btn-primary {
-    background-color: #f9f9f9; /* Bootstrap Primary Color */
-    border-radius: 10px;
-    padding: 7px;
-    /* border: 1px solid #ccc; */
-    font-size: 12px;
-    right: 0 !important;
-    color: #333;
-  }
-  
-  .btn-primary:hover {
-    box-shadow: 2px 2px #333
-  }
-  
-  /* Load More Button */
-  .btn-secondary {
-    background-color: #6c757d; /* Bootstrap Secondary Color */
-    color: white;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #5a6268; /* Darker gray on hover */
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 1200px) {
-    .grid-container {
-      grid-template-columns: repeat(3, 1fr); /* Three columns */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .grid-container {
-      grid-template-columns: repeat(2, 1fr); /* Two columns */
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .grid-container {
-      grid-template-columns: 1fr; /* One column */
-    }
-  }
-  
-  /* Multi-line text truncation */
-.text-truncate-multi {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 7.5em; 
-  }
-  
-  .card-footer {
-    display: flex;
-    justify-content: flex-end; /* Align content to the right */
+.section-heading2{
+font-size: 28px;
+margin: 50px;
+text-align: center;
+font-family: sans-serif;
+font-weight: bold;
+letter-spacing: 2px;
 }
 
-.text-muted {
-    font-size: 12px;
-    opacity: 0.5;
-    font-weight: 500;
-    margin-left: -20px;
+.img-fluid{
+  border-radius: 10px;
+}
+
+.blog-title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.blog-date{
+  margin-top: 30px;
+  font-size: 12px;
+}
+
+.read-more {
+  background-color: transparent; /* Initial background color */
+  color: grey; /* Text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  margin-top: 12px; /* Margin for separation */
+  display: flex; /* Flex for aligning icon and text */
+  align-items: center; /* Center the icon vertically */
+  padding: 8px 16px; /* Add some padding for better button feel */
+  border-radius: 4px; /* Slightly rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Hover effect */
+.read-more:hover {
+  margin-top: 8px; /* Slight reduction to create a 'floating' effect */
+  background-color: rgba(255, 228, 196, 0.5); /* Light, transparent background */
+  box-shadow: 0 4px 8px rgba(240, 240, 240, 0.5); /* Subtle shadow effect */
+  color: #333; /* Darker text color for contrast */
+}
+
+
+.media-figure {
+  grid-column: span 4; /* Image takes 4 columns */
+}
+
+.content {
+  grid-column: span 8; /* Content takes 8 columns */
+}
+
+/* Styling for the Read More button */
+.read-more-button {
+  background-color: transparent; /* Transparent background */
+  color: grey; /* Text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  margin-top: 12px; /* Margin for separation */
+  display: flex; /* Flex for aligning icon and text */
+  align-items: center; /* Center the icon vertically */
+} 
+
+/* Downward moving icon animation */
+.down-icon {
+  margin-left: 8px; /* Space between text and icon */
+  animation: bounce 1.5s infinite; /* Infinite bounce animation */
+}
+
+/* Bounce animation keyframes */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px); /* Move down slightly */
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .blog-container {
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+  }
+  
+  .media-figure {
+    grid-column: span 12; /* Image takes full width */
+  }
+  
+  .content {
+    grid-column: span 12; /* Content takes full width */
+  }
 }
