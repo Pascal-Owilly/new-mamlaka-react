@@ -5,7 +5,7 @@ import { BASE_URL } from '../config/Config';
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const testimonialsPerPage = 3; // Updated to show 3 testimonials per page
+  const testimonialsPerPage = 3; // Showing 3 testimonials per page
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -20,6 +20,11 @@ const Testimonials = () => {
 
     fetchTestimonials();
   }, []);
+
+  // Scroll to top on page change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentIndex]);
 
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
 
@@ -65,7 +70,7 @@ const Testimonials = () => {
                   <p>{testimonial.client_name}</p>
                 </div>
               </div>
-              <p>{testimonial.client_text}</p> {/* Changed from client_text to client_context */}
+              <p>{testimonial.client_text}</p>
               <div className="icon">
                 <i className="fa fa-quote-right" aria-hidden="true"></i>
               </div>

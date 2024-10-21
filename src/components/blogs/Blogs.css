@@ -109,3 +109,25 @@ letter-spacing: 2px;
     grid-column: span 12; /* Content takes full width */
   }
 }
+
+.pagination-btn {
+  background-color: #862790; /* Background color */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 50%; /* Make it circular */
+  padding: 10px 15px; /* Adjust size */
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover {
+  background-color: #6b1e6a; /* Slightly darker shade on hover */
+}
+
+.pagination-btn:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}

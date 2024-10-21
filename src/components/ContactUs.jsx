@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {BASE_URL} from './config/Config';  // Assuming config.js has BASE_URL exported
 
 const ContactUsPage = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ const ContactUsPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://testmanagement.pythonanywhere.com/api/blog/contact-us/create/', formData);
+      const response = await axios.post(`${BASE_URL}/api/blog/contact-us/create/`, formData);
       if (response.status === 200 || response.status === 201) {
         setStatusMessage('Your message has been sent successfully!');
       } else {
@@ -44,7 +45,7 @@ const ContactUsPage = () => {
         </p>
       </section>
 
-      {/* Contact Section with Form and Map */}
+      {/* Contact Section with Form, Address, and Map */}
       <div className="container p-8 bg-gray-100">
         <div className="row">
           {/* Contact Form Column */}
@@ -110,21 +111,25 @@ const ContactUsPage = () => {
             </div>
           </div>
 
-          {/* Map Column */}
+          {/* Location and Address Column */}
           <div className="col-md-6">
+   
+
+            {/* Map Column */}
             <h2 className="text-gray-800">Our Location</h2>
             <div className="map-container mt-3">
-            <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8066302536363!2d36.7805007742029!3d-1.290309798697427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a74508e065%3A0xa5cbc5deae5472db!2sWu%20Yi%20plaza!5e0!3m2!1sen!2ske!4v1723736534747!5m2!1sen!2ske"
-        width="100%" // Use percentage to make it responsive
-        height="450"
-        style={{ border: '0' }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8066302536363!2d36.7805007742029!3d-1.290309798697427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a74508e065%3A0xa5cbc5deae5472db!2sWu%20Yi%20plaza!5e0!3m2!1sen!2ske!4v1723736534747!5m2!1sen!2ske"
+                width="100%"
+                height="450"
+                style={{ border: '0' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
+    
         </div>
       </div>
     </div>

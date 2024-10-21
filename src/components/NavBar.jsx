@@ -67,7 +67,7 @@ const Navbar = () => {
 <div className="sm:hidden relative z-50 flex flex-1 justify-end items-center">
   {/* Menu toggle button */}
   <button className="size-7" onClick={() => setIsOpen(!isOpen)}>
-    {isOpen ? <CloseIcon /> : <MenuIcon />}
+    {isOpen ? <MenuIcon /> : <CloseIcon />}
   </button>
 
   {/* Mobile menu */}

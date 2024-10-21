@@ -22,6 +22,11 @@ const Blog = () => {
       });
   }, []);
 
+  // Scroll to top on page change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
   const handlePrevPage = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
@@ -43,7 +48,7 @@ const Blog = () => {
         )}
         <div className="content">
           <h3 className="blog-title">
-            <a href="#" className="blog-title-link">{post.title}</a>
+            <a href={`/blog/${post.id}`} className="blog-title-link">{post.title}</a>
           </h3>
           <p className="blog-excerpt">
             {post.excerpt.length > 150 ? `${post.excerpt.substring(0, 150)}...` : post.excerpt}
@@ -54,7 +59,7 @@ const Blog = () => {
           </p>
           <button 
               className="read-more" 
-              onClick={() => window.location.href = `/blog/${post.id}`} // Adjust the URL as needed
+              onClick={() => window.location.href = `/blog/${post.id}`} 
             >
               Read More &nbsp; <FaArrowRight fontSize={15} />
             </button>
@@ -74,21 +79,21 @@ const Blog = () => {
         <div className="row" id="blog-container">
           {renderBlogPosts()}
         </div>
-        <div className="paginati  on-controls text-center mt-4">
+        <div className="pagination-controls text-center mt-4">
           <button
-            className="btn btn-sm btn-outline-info"
+            className="pagination-btn"
             onClick={handlePrevPage}
             disabled={currentPage === 1}
           >
-            Previous
+            ❮
           </button>
           <span className="mx-3">{`Page ${currentPage} of ${Math.ceil(blogPosts.length / postsPerPage)}`}</span>
           <button
-            className="btn btn-sm btn-outline-primary"
+            className="pagination-btn"
             onClick={handleNextPage}
             disabled={currentPage === Math.ceil(blogPosts.length / postsPerPage)}
           >
-            Next
+            ❯
           </button>
         </div>
       </div>
