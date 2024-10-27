@@ -1,133 +1,417 @@
-
-.blog-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px; /* Adjust spacing between grid items */
-  margin-bottom: 24px; /* Space between blog posts */
-  padding: 16px; /* Padding around each blog post */
-  background-color: white; /* Background color for blog post */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
-  border-radius: 8px; /* Rounded corners */
-  max-width: 90%;
+/* Blogs.css */
+.blog-page {
+  font-family: Arial, sans-serif;
+  width: 95%;
   margin: auto;
 }
 
-.section-heading2{
-font-size: 28px;
-margin: 50px;
-text-align: center;
-font-family: sans-serif;
-font-weight: bold;
-letter-spacing: 2px;
+.header {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
 }
 
-.img-fluid{
-  border-radius: 10px;
+.news-events {
+  background-color: #fff; /* Light background for items */
+  padding: 20px 10px; /* Ample padding for spacing */
+  text-align: center; /* Center the heading */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px 0; /* Space above and below the section */
+  width: 100%;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
-.blog-title{
-  font-size: 20px;
+.news-events h1 {
+  font-size: 2em; /* Large font size for prominence */
+  font-weight: bold; /* Make it bold */
+  color: #333; /* Dark gray color for a professional look */
+  margin: 0; /* Remove default margin */
+  text-transform: uppercase; /* Uppercase letters for emphasis */
+  letter-spacing: 1px; /* Slight letter spacing for elegance */
+  line-height: 1.2; /* Line height for better readability */
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean sans-serif font */
+}
+
+.news-events h1::after {
+  content: ""; /* Create a decorative line below */
+  display: block; /* Make it a block element */
+  width: 50px; /* Width of the line */
+  height: 4px; /* Height of the line */
+  background-color: #773697; /* Your specified color for the line */
+  margin: 20px auto 0; /* Center the line with spacing */
+}
+
+
+.header nav a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
   font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.blog-date{
-  margin-top: 30px;
-  font-size: 12px;
-}
-
-.read-more {
-  background-color: transparent; /* Initial background color */
-  color: grey; /* Text color */
-  border: none; /* Remove border */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-size: 16px; /* Font size */
-  margin-top: 12px; /* Margin for separation */
-  display: flex; /* Flex for aligning icon and text */
-  align-items: center; /* Center the icon vertically */
-  padding: 8px 16px; /* Add some padding for better button feel */
-  border-radius: 4px; /* Slightly rounded corners */
-  transition: all 0.3s ease; /* Smooth transition for all properties */
-}
-
-/* Hover effect */
-.read-more:hover {
-  margin-top: 8px; /* Slight reduction to create a 'floating' effect */
-  background-color: rgba(255, 228, 196, 0.5); /* Light, transparent background */
-  box-shadow: 0 4px 8px rgba(240, 240, 240, 0.5); /* Subtle shadow effect */
-  color: #333; /* Darker text color for contrast */
-}
-
-
-.media-figure {
-  grid-column: span 4; /* Image takes 4 columns */
 }
 
 .content {
-  grid-column: span 8; /* Content takes 8 columns */
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-/* Styling for the Read More button */
-.read-more-button {
-  background-color: transparent; /* Transparent background */
-  color: grey; /* Text color */
-  border: none; /* Remove border */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-size: 16px; /* Font size */
-  margin-top: 12px; /* Margin for separation */
-  display: flex; /* Flex for aligning icon and text */
-  align-items: center; /* Center the icon vertically */
-} 
-
-/* Downward moving icon animation */
-.down-icon {
-  margin-left: 8px; /* Space between text and icon */
-  animation: bounce 1.5s infinite; /* Infinite bounce animation */
+.main-news {
+  flex: 3;
+  margin-right: 20px;
+  position: relative; /* Make it the relative positioning context */
 }
 
-/* Bounce animation keyframes */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(4px); /* Move down slightly */
-  }
+.main-news .main-article img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8; /* Add opacity to the image */
+}
+
+.main-news h2,
+.main-news p {
+  position: absolute; /* Position text on top of the image */
+  top: 20%; /* Adjust based on where you want it */
+  left: 10%;
+  color: white; /* Change color to make it visible over the image */
+  z-index: 2; /* Ensure text is above the image */
+}
+
+.related-articles {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.related-article {
+  background-color: #f0f0f0;
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.related-article img {
+  width: 100%;
+  height: auto;
+}
+
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar {
+  background-color: #ffffff; /* White background for a clean look */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin-top: 20px; /* Space from the top */
+}
+
+.sidebar h3 {
+  font-size: 1.8em; /* Larger font size for headings */
+  font-weight: bold; /* Bold for emphasis */
+  color: #333; /* Dark gray color for text */
+  margin-bottom: 15px; /* Space below headings */
+  border-bottom: 2px solid #773697; /* Underline for visual appeal */
+  padding-bottom: 10px; /* Padding for spacing */
+}
+
+.title-headings h3 {
+  font-size: 1.8em; /* Larger font size for headings */
+  font-weight: bold; /* Bold for emphasis */
+  color: #333; /* Dark gray color for text */
+  margin-bottom: 15px; /* Space below headings */
+  padding-bottom: 10px; /* Padding for spacing */
+}
+
+.trending-list {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  gap: 15px; /* Space between items */
+}
+
+.trending-item {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  background-color: #f9f9f9; /* Light background for items */
+  border-radius: 8px; /* Rounded corners for items */
+  padding: 10px; /* Padding for spacing */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.trending-item:hover {
+  transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+.trending-item img {
+  width: 80px; /* Fixed width for images */
+  height: 80px; /* Fixed height for images */
+  border-radius: 5px; /* Rounded corners for images */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.social-links {
+  display: flex; /* Use flexbox for layout */
+  gap: 10px; /* Space between buttons */
+  margin-top: 10px; /* Space from the heading */
+}
+
+.social-button {
+  background-color: #773697; /* Background color for buttons */
+  color: #ffffff; /* White text color */
+  padding: 10px 15px; /* Padding for buttons */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from links */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.social-button:hover {
+  background-color: #5b2a78; /* Darker shade on hover */
+}
+
+.most-viewed-list {
+  list-style-type: decimal; /* Decimal numbers for ordered list */
+  padding-left: 20px; /* Indent list items */
+  margin-top: 10px; /* Space from heading */
+}
+
+
+.trending-news, .follow-us, .most-viewed {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.trending-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trending-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.feature-news {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-top: 20px; /* Add margin to separate from content */
+}
+
+.feature-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.feature-item {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.feature-item img {
+  width: 100%;
+  height: auto;
+}
+
+.social-links button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.most-viewed ol {
+  padding: 0;
+  list-style-position: inside;
+}
+
+.most-viewed li {
+  padding: 5px 0;
+  font-size: 0.9em;
 }
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  .blog-container {
-    grid-template-columns: 1fr; /* Single column layout on small screens */
-  }
-  
-  .media-figure {
-    grid-column: span 12; /* Image takes full width */
-  }
-  
   .content {
-    grid-column: span 12; /* Content takes full width */
+    flex-direction: column; /* Stack the content vertically */
+  }
+
+  .main-news {
+    margin-right: 0; /* Reset margin */
+  }
+
+  .related-articles {
+    flex-direction: column; /* Stack related articles */
+  }
+
+  .feature-grid {
+    flex-direction: column; /* Stack feature items */
+  }
+  .image-overlay h2 {
+    font-size: 1.3rem !important; /* Adjust font size as needed */
+    font-weight: bold; /* Make it prominent */
+    margin: auto !important;
+  }
+  
+  .image-overlay p {
+    font-size: .9rem !important; /* Adjust font size for the paragraph */
+    margin-top: 70px !important;
   }
 }
 
-.pagination-btn {
-  background-color: #862790; /* Background color */
-  color: #fff; /* Text color */
-  border: none;
-  border-radius: 50%; /* Make it circular */
-  padding: 10px 15px; /* Adjust size */
-  margin: 0 10px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
+
+/* Additional styles for the main-news section */
+
+.main-news {
+  position: relative; /* Set the position to relative for absolute positioning of overlay */
 }
 
-.pagination-btn:hover {
-  background-color: #6b1e6a; /* Slightly darker shade on hover */
+.image-container {
+  position: relative; /* Make it the positioning context for the overlay */
 }
 
-.pagination-btn:disabled {
-  background-color: #ddd;
-  color: #aaa;
-  cursor: not-allowed;
+.main-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
+.image-container {
+  position: relative; /* Ensure that the overlay is positioned relative to this container */
+  overflow: hidden; /* Hide any overflow from the image */
+}
+
+.main-image {
+  width: 100%; /* Make sure the image takes the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)); /* Softer gradient */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 30px; /* Increased padding for a spacious feel */
+  color: #f5f5f5; /* Softer white color */
+  text-align: center; /* Center the text */
+  border-radius: 15px; /* Rounded corners for a modern touch */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.image-overlay h2 {
+  font-size: 2.5em; /* Increased font size for the heading */
+  font-weight: 700; /* Make it prominent with bolder weight */
+  margin: 0 0 10px; /* Remove top margin, add space below the heading */
+  text-transform: uppercase; /* Make text all uppercase for emphasis */
+  letter-spacing: 2px; /* Increased letter spacing for a modern look */
+  margin-top: 100px;
+}
+
+.image-overlay p {
+  font-size: 1.2em; /* Slightly smaller font size for the paragraph */
+  margin: 10px 0 0; /* Top margin only for spacing */
+  opacity: 0.9; /* Slightly transparent for a modern effect */
+}
+
+/* Related articles */
+.related-articles {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.related-article {
+  background-color: #f0f0f0;
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.related-article img {
+  width: 100%;
+  height: auto;
+}
+
+/* Events */
+
+/* General Styles */
+.events-section {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.events-list {
+  display: grid; /* Use grid for layout */
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 20px; /* Space between events */
+}
+
+/* Event Item Styles */
+.event-item {
+  display: flex; /* Flex layout to position image and text side by side */
+  align-items: center; /* Center items vertically */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px;
+  overflow: hidden; /* Clip any overflow */
+  background-color: #fff; /* White background for event items */
+  transition: transform 0.3s; /* Smooth transform on hover */
+}
+
+.event-item:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.event-image-container {
+  flex: 0 0 150px; /* Fixed width for the image container */
+}
+
+.event-image-container img {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height to fill container */
+  object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+.event-details {
+  padding: 10px; /* Padding for the text */
+  flex: 1; /* Allow text container to grow */
+}
+
+.event-details h4 {
+  margin: 0; /* Remove default margin */
+}
+
+.event-details p {
+  margin: 5px 0; /* Spacing between paragraphs */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .events-list {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .events-list {
+    grid-template-columns: 1fr; /* One column on mobile screens */
+  }
+}
+
+
+/* End events */

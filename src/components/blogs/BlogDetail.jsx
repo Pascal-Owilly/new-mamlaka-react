@@ -1,55 +1,55 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { BASE_URL } from '../config/Config'; // Import your BASE_URL config
-import "./BlogDetail.css";
-const BlogDetail = () => {
+import { BASE_URL } from '../config/Config';
+import './BlogDetailGrid.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+import { format } from 'date-fns';
+
+const BlogDetailGrid = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBlogDetail = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}blog/blogposts/${id}/`);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setBlog(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
+      const response = await fetch(`${BASE_URL}blog/blogposts/${id}/`);
+      const data = await response.json();
+      setBlog(data);
     };
-
     fetchBlogDetail();
   }, [id]);
 
-  if (loading) return <div className="text-center loading my-5">Loading...</div>;
-  if (error) return <div className="text-center text-danger error my-5">Error: {error}</div>;
-
-  if (!blog) {
-    return (
-      <div className="text-center my-5">
-        <p>No blog found.</p>
-      </div>
-    );
-  }
+  if (!blog) return <div>Loading...</div>;
 
   return (
-    <div className="hero-section" >
-      <div className="hero-overlay">
-        <img src={blog.image} alt="" />
-        <h1 className="hero-title">{blog.title}</h1>
+    <div className="blog-detail-grid">
+      <div className="section-title">
+        <h1>{blog.title}</h1>
       </div>
-      <div className="blog-content">
-        <p>{blog.excerpt}</p>
-        <p style={{fontStyle:'italic', opacity:'0.5', fontSize:'14px'}}>Published on: {new Date(blog.created_at).toLocaleDateString()}</p>
+      <div className="section-info">
+        <p>
+          <FontAwesomeIcon icon={faUserAlt} style={{ marginRight: '5px' }} /> {blog.user}
+        </p>
+        <p>
+          <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: '5px' }} />
+          {format(new Date(blog.created_at), 'MMMM d, yyyy \'at\' hh:mm:ss a')}
+        </p>
+      </div>
+      {Object.entries(blog.sections_by_type).map(([sectionType, items], index) => (
+        <div key={index} className={`section-${sectionType}`}>
+          {items.map((item, idx) => (
+            <div key={idx} className="section-item">
+              {sectionType === 'title' && <h1>{item.content}</h1>}
+              {sectionType === 'content' && <p>{item.content}</p>}
+              {sectionType === 'excerpt' && <p className="excerpt">{item.content}</p>}
+              {sectionType === 'image' && <img src={item.url} alt="Blog" />}
+              {sectionType === 'video' && <video src={item.url} controls />}
+            </div>
+          ))}
         </div>
+      ))}
     </div>
   );
 };
 
-export default BlogDetail;
+export default BlogDetailGrid;
