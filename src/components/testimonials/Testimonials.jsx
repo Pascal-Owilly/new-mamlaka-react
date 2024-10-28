@@ -10,7 +10,7 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch(`${BASE_URL}blog/testimonials`);
+        const response = await fetch(`${BASE_URL}testimonials`);
         const data = await response.json();
         setTestimonials(data); // Assuming data is an array of testimonials
       } catch (error) {

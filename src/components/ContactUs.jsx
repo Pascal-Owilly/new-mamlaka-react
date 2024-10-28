@@ -19,7 +19,7 @@ const ContactUsPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BASE_URL}/api/blog/contact-us/create/`, formData);
+      const response = await axios.post(`${BASE_URL}contact-us/create/`, formData);
       if (response.status === 200 || response.status === 201) {
         setStatusMessage('Your message has been sent successfully!');
       } else {

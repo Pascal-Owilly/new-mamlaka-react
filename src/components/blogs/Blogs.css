@@ -263,6 +263,7 @@
     font-size: 1.3rem !important; /* Adjust font size as needed */
     font-weight: bold; /* Make it prominent */
     margin: auto !important;
+    margin-left: -20px;
   }
   
   .image-overlay p {
@@ -317,10 +318,11 @@
 .image-overlay h2 {
   font-size: 2.5em; /* Increased font size for the heading */
   font-weight: 700; /* Make it prominent with bolder weight */
-  margin: 0 0 10px; /* Remove top margin, add space below the heading */
-  text-transform: uppercase; /* Make text all uppercase for emphasis */
+  text-transform: capitalize; /* Make text all uppercase for emphasis */
   letter-spacing: 2px; /* Increased letter spacing for a modern look */
   margin-top: 100px;
+  margin: auto;
+  margin-left: -40px;
 }
 
 .image-overlay p {
@@ -415,3 +417,73 @@
 
 
 /* End events */
+
+/* start paginaton */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #773697; /* Use your preferred color */
+  color: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc; /* Change for disabled state */
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 10px;
+}
+
+.image-container {
+  position: relative;
+
+}
+
+.main-image {
+  width: 100%;
+  max-height: 500px !important;
+  object-fit: cover !important;
+  border-radius: 10px;
+  
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.read-more-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #773697; /* Your specified color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.read-more-button:hover {
+  background-color: #5a2a78; /* A darker shade for hover */
+}

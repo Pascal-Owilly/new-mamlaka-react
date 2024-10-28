@@ -12,7 +12,7 @@ const SubscriptionForm = () => {
     setErrorMessage("");
 
     try {
-      const response = await fetch(`${BASE_URL}/blog/subscriptions/create/`, {
+      const response = await fetch(`${BASE_URL}subscriptions/create/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
